@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Set WhatsApp link
     const message = encodeURIComponent(product.whatsappMessage);
-    whatsappBtn.href = `https://wa.me/77777777777?text=${message}`;
+    whatsappBtn.href = `https://wa.me/77754782111?text=${message}`;
     whatsappBtn.setAttribute("data-product-name", product.name);
 
     // Render sizes
@@ -181,7 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const message = encodeURIComponent(
             `${currentProduct.whatsappMessage} Размер: ${selectedSize}.`,
           );
-          whatsappBtn.href = `https://wa.me/77777777777?text=${message}`;
+          whatsappBtn.href = `https://wa.me/77754782111?text=${message}`;
         }
       });
     });

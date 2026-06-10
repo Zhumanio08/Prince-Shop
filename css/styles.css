@@ -148,26 +148,28 @@ button {
 .logo {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 24px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: var(--color-white);
-  transition: color var(--transition);
+  z-index: 1001;
 }
 
-.header.scrolled .logo {
-  color: var(--color-black);
+.logo__img {
+  height: 44px;
+  width: auto;
+  display: block;
+  transition: opacity var(--transition);
+  background: transparent;
+  border-radius: 6px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
-.logo__icon {
-  font-size: 28px;
-  line-height: 1;
+.header.scrolled .logo__img {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
 }
 
-.logo__text {
-  font-family: var(--font-secondary);
-  font-weight: 700;
+@media (max-width: 767px) {
+  .logo__img {
+    height: 34px;
+    border-radius: 4px;
+  }
 }
 
 /* Navigation */
@@ -611,6 +613,13 @@ button {
   display: flex;
   gap: 20px;
   align-items: flex-start;
+  padding: 20px 24px;
+  background: var(--color-white);
+  transition: all var(--transition);
+}
+
+.contact-item:hover {
+  transform: translateX(4px);
 }
 
 .contact-item__icon {
@@ -618,6 +627,12 @@ button {
   height: 48px;
   flex-shrink: 0;
   color: var(--color-black);
+  padding: 10px;
+  background: var(--color-gray-100);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .contact-item__icon svg {
@@ -625,23 +640,30 @@ button {
   height: 100%;
 }
 
-.contact-item h4 {
-  font-size: 14px;
+.contact-item__text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 4px;
+}
+
+.contact-item__label {
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--color-gray-500);
-  margin-bottom: 6px;
 }
 
-.contact-item p {
+.contact-item__value {
   font-size: 16px;
   color: var(--color-dark);
-  line-height: 1.6;
+  line-height: 1.5;
+  font-weight: 500;
 }
 
-.contact-item a:hover {
-  color: var(--color-gray-700);
+.contact-item__value a:hover {
+  color: var(--color-black);
 }
 
 .map-container {
