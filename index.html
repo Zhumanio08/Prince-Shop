@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PRINCE — Мужская одежда премиум-класса</title>
+    <meta
+      name="description"
+      content="PRINCE — магазин мужской одежды в Алматы. Качественная мужская одежда для современного мужчины."
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>♛</text></svg>"
+    />
+  </head>
+  <body>
+    <!-- ========== HEADER / NAVIGATION ========== -->
+    <header class="header" id="header">
+      <div class="container">
+        <div class="header__inner">
+          <a href="#hero" class="logo">
+            <span class="logo__icon">♛</span>
+            <span class="logo__text">PRINCE</span>
+          </a>
+          <nav class="nav" id="nav">
+            <ul class="nav__list">
+              <li><a href="#hero" class="nav__link active">Главная</a></li>
+              <li><a href="#catalog" class="nav__link">Каталог</a></li>
+              <li><a href="#about" class="nav__link">О магазине</a></li>
+              <li><a href="#contacts" class="nav__link">Контакты</a></li>
+            </ul>
+          </nav>
+          <button class="burger" id="burger" aria-label="Меню">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero" id="hero">
+      <div class="hero__bg">
+        <div class="hero__overlay"></div>
+        <picture>
+          <source
+            srcset="
+              https://images.unsplash.com/photo-1602683516155-5a2012fdc374?w=1920&q=80
+            "
+            media="(min-width: 768px)"
+          />
+          <source
+            srcset="
+              https://images.unsplash.com/photo-1602683516155-5a2012fdc374?w=800&q=80
+            "
+            media="(max-width: 767px)"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1602683516155-5a2012fdc374?w=1920&q=80"
+            alt="Мужская одежда PRINCE"
+            class="hero__image"
+            loading="eager"
+          />
+        </picture>
+      </div>
+      <div class="container">
+        <div class="hero__content">
+          <h1 class="hero__title">Мужской стиль<br />на каждый день</h1>
+          <p class="hero__subtitle">
+            Качественная мужская одежда для современного мужчины
+          </p>
+          <a href="#catalog" class="btn btn--primary">Перейти в каталог</a>
+        </div>
+      </div>
+      <div class="hero__scroll">
+        <span>Листайте вниз</span>
+        <div class="scroll__mouse"><div class="scroll__dot"></div></div>
+      </div>
+    </section>
+
+    <!-- ========== ADVANTAGES SECTION ========== -->
+    <section class="advantages section" id="advantages">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__tag">Преимущества</span>
+          <h2 class="section__title">Почему выбирают нас</h2>
+        </div>
+        <div class="advantages__grid">
+          <div class="advantage-card" data-delay="0">
+            <div class="advantage-card__icon">
+              <svg viewBox="0 0 48 48">
+                <path
+                  d="M12 32L24 8l12 24H12z"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <path
+                  d="M8 38h32"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <h3 class="advantage-card__title">Качественные материалы</h3>
+            <p class="advantage-card__text">
+              Только проверенные ткани и материалы премиум-класса
+            </p>
+          </div>
+          <div class="advantage-card" data-delay="100">
+            <div class="advantage-card__icon">
+              <svg viewBox="0 0 48 48">
+                <rect
+                  x="8"
+                  y="16"
+                  width="32"
+                  height="24"
+                  rx="2"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <path
+                  d="M16 16V12a8 8 0 0116 0v4"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+            <h3 class="advantage-card__title">Современные модели</h3>
+            <p class="advantage-card__text">
+              Актуальные тренды мировых fashion-показов
+            </p>
+          </div>
+          <div class="advantage-card" data-delay="200">
+            <div class="advantage-card__icon">
+              <svg viewBox="0 0 48 48">
+                <path
+                  d="M24 6C14.06 6 6 14.06 6 24s8.06 18 18 18 18-8.06 18-18S33.94 6 24 6z"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <path
+                  d="M24 14v10l6 6"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <h3 class="advantage-card__title">Комфортная посадка</h3>
+            <p class="advantage-card__text">
+              Идеальная посадка по фигуре для вашего комфорта
+            </p>
+          </div>
+          <div class="advantage-card" data-delay="300">
+            <div class="advantage-card__icon">
+              <svg viewBox="0 0 48 48">
+                <path
+                  d="M6 28l12-10 10 8 14-12"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M34 14h8v8"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h3 class="advantage-card__title">Актуальные коллекции</h3>
+            <p class="advantage-card__text">
+              Регулярное обновление ассортимента
+            </p>
+          </div>
+          <div class="advantage-card" data-delay="400">
+            <div class="advantage-card__icon">
+              <svg viewBox="0 0 48 48">
+                <path
+                  d="M24 6v36M6 24h36"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <circle
+                  cx="24"
+                  cy="24"
+                  r="10"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+            <h3 class="advantage-card__title">Индивидуальный подход</h3>
+            <p class="advantage-card__text">
+              Персональные рекомендации и помощь в выборе
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CATALOG SECTION ========== -->
+    <section class="catalog section" id="catalog">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__tag">Каталог</span>
+          <h2 class="section__title">Наша коллекция</h2>
+          <p class="section__text">Откройте для себя безупречный стиль</p>
+        </div>
+        <div class="catalog__grid" id="catalogGrid">
+          <!-- Products will be rendered here by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ABOUT SECTION ========== -->
+    <section class="about section" id="about">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__tag">О нас</span>
+          <h2 class="section__title">PRINCE — стиль, качество, уверенность</h2>
+        </div>
+        <div class="about__content">
+          <div class="about__text">
+            <p>
+              PRINCE — это премиальный магазин мужской одежды, созданный для
+              тех, кто ценит качество, стиль и индивидуальность. Мы тщательно
+              отбираем каждую коллекцию, чтобы предложить вам актуальные модели
+              из лучших материалов.
+            </p>
+            <p>
+              Наша миссия — помочь современному мужчине выглядеть безупречно в
+              любой ситуации. От деловых встреч до повседневных образов — мы
+              знаем, что вам нужно.
+            </p>
+            <div class="about__principles">
+              <div class="principle">
+                <span class="principle__num">01</span>
+                <span class="principle__text">Качество превыше всего</span>
+              </div>
+              <div class="principle">
+                <span class="principle__num">02</span>
+                <span class="principle__text">Актуальность и стиль</span>
+              </div>
+              <div class="principle">
+                <span class="principle__num">03</span>
+                <span class="principle__text">Забота о каждом клиенте</span>
+              </div>
+            </div>
+          </div>
+          <div class="about__images">
+            <div class="about__img-main">
+              <img
+                src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80"
+                alt="Интерьер магазина PRINCE"
+                loading="lazy"
+              />
+            </div>
+            <div class="about__img-secondary">
+              <img
+                src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?w=400&q=80"
+                alt="Детали интерьера"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CONTACTS SECTION ========== -->
+    <section class="contacts section" id="contacts">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__tag">Контакты</span>
+          <h2 class="section__title">Свяжитесь с нами</h2>
+        </div>
+        <div class="contacts__content">
+          <div class="contacts__info">
+            <div class="contact-item">
+              <div class="contact-item__icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <circle
+                    cx="12"
+                    cy="9"
+                    r="2.5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h4>Адрес</h4>
+                <p>Наурызбай Батыра 68<br />угол Айтеке Би</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item__icon">
+                <svg viewBox="0 0 24 24">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M12 6v6l4 2"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h4>Время работы</h4>
+                <p>Ежедневно: 10:00 - 22:00</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item__icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h4>Телефон</h4>
+                <p><a href="tel:+77777777777">+7 (777) 777-77-77</a></p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item__icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M21 11.5a8.5 8.5 0 01-8.5 8.5H6l-4 2 1.5-4.5A8.5 8.5 0 1112.5 3H13a8.5 8.5 0 018 8.5z"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h4>WhatsApp</h4>
+                <p>
+                  <a
+                    href="https://wa.me/77777777777"
+                    target="_blank"
+                    rel="noopener"
+                    >Написать в WhatsApp</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="contacts__map">
+            <div id="map" class="map-container">
+              <iframe
+                src="https://2gis.kz/almaty/geo/9430044739468374/76.917129%2C43.247351?m=76.917129%2C43.247351%2F16"
+                width="100%"
+                height="100%"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="PRINCE на карте Алматы"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__inner">
+          <div class="footer__brand">
+            <a href="#hero" class="logo">
+              <span class="logo__icon">♛</span>
+              <span class="logo__text">PRINCE</span>
+            </a>
+            <p class="footer__desc">
+              Премиальная мужская одежда для тех, кто ценит качество и стиль.
+            </p>
+          </div>
+          <div class="footer__info">
+            <div class="footer__col">
+              <h4>Контакты</h4>
+              <p>Наурызбай Батыра 68<br />угол Айтеке Би</p>
+              <p>10:00 - 22:00</p>
+              <p><a href="tel:+77777777777">+7 (777) 777-77-77</a></p>
+            </div>
+            <div class="footer__col">
+              <h4>Социальные сети</h4>
+              <div class="footer__socials">
+                <a href="#" class="social-link" aria-label="Instagram">
+                  <svg viewBox="0 0 24 24">
+                    <rect
+                      x="2"
+                      y="2"
+                      width="20"
+                      height="20"
+                      rx="5"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    />
+                    <circle
+                      cx="12"
+                      cy="12"
+                      r="5"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    />
+                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+                  </svg>
+                </a>
+                <a
+                  href="https://wa.me/77777777777"
+                  class="social-link"
+                  aria-label="WhatsApp"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M21 11.5a8.5 8.5 0 01-8.5 8.5H6l-4 2 1.5-4.5A8.5 8.5 0 1112.5 3H13a8.5 8.5 0 018 8.5z"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <p>&copy; 2026 PRINCE. Все права защищены.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ========== PRODUCT MODAL ========== -->
+    <div class="modal-overlay" id="productModal">
+      <div class="modal">
+        <button class="modal__close" id="modalClose" aria-label="Закрыть">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M18 6L6 18M6 6l12 12"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+        <div class="modal__gallery" id="modalGallery">
+          <div class="gallery__main" id="galleryMain">
+            <img src="" alt="" id="galleryImg" />
+            <button
+              class="gallery__zoom-btn"
+              id="zoomBtn"
+              aria-label="Увеличить"
+            >
+              <svg viewBox="0 0 24 24">
+                <circle
+                  cx="11"
+                  cy="11"
+                  r="8"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <path
+                  d="M21 21l-4.35-4.35M11 8v6M8 11h6"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="gallery__thumbs" id="galleryThumbs"></div>
+        </div>
+        <div class="modal__info">
+          <span class="modal__availability" id="modalAvailability"
+            >В наличии</span
+          >
+          <h2 class="modal__title" id="modalTitle">Название товара</h2>
+          <div class="modal__price" id="modalPrice">0 ₸</div>
+          <p class="modal__description" id="modalDescription">
+            Описание товара
+          </p>
+          <div class="modal__sizes">
+            <h4>Выберите размер:</h4>
+            <div class="sizes__grid" id="sizesGrid">
+              <button class="size-btn" data-size="XS">XS</button>
+              <button class="size-btn" data-size="S">S</button>
+              <button class="size-btn" data-size="M">M</button>
+              <button class="size-btn active" data-size="L">L</button>
+              <button class="size-btn" data-size="XL">XL</button>
+              <button class="size-btn" data-size="XXL">XXL</button>
+            </div>
+          </div>
+          <div class="modal__actions">
+            <a
+              href="#"
+              class="btn btn--primary btn--whatsapp"
+              id="whatsappBtn"
+              target="_blank"
+              rel="noopener"
+            >
+              <svg viewBox="0 0 24 24" width="20" height="20">
+                <path
+                  d="M21 11.5a8.5 8.5 0 01-8.5 8.5H6l-4 2 1.5-4.5A8.5 8.5 0 1112.5 3H13a8.5 8.5 0 018 8.5z"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              Написать в WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== ZOOM OVERLAY ========== -->
+    <div class="zoom-overlay" id="zoomOverlay">
+      <button class="zoom-overlay__close" id="zoomClose" aria-label="Закрыть">
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M18 6L6 18M6 6l12 12"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+      </button>
+      <img src="" alt="" id="zoomImage" />
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
