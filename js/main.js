@@ -106,20 +106,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderCatalog();
 
+  // Helper: determine if product is in stock (at least one size available)
+  const isInStock = (product) => product.sizes.some((s) => s.available);
+
   // ========== MODAL ==========
   const openModal = (product) => {
     currentProduct = product;
     currentImageIndex = 0;
 
+    const inStock = isInStock(product);
+
     modalTitle.textContent = product.name;
     modalPrice.textContent = product.price;
     modalDescription.textContent = product.description;
-    modalAvailability.textContent = product.availability;
+    modalAvailability.textContent = inStock ? "В наличии" : "Нет в наличии";
+    modalAvailability.className =
+      "modal__availability " +
+      (inStock
+        ? "modal__availability--in-stock"
+        : "modal__availability--out-of-stock");
 
     // Set WhatsApp link
     const message = encodeURIComponent(product.whatsappMessage);
     whatsappBtn.href = `https://wa.me/77754782111?text=${message}`;
     whatsappBtn.setAttribute("data-product-name", product.name);
+
+    // Show/hide WhatsApp button based on availability
+    whatsappBtn.style.display = inStock ? "inline-flex" : "none";
 
     // Render sizes
     renderSizes(product);
@@ -157,34 +170,47 @@ document.addEventListener("DOMContentLoaded", () => {
     sizesGrid.innerHTML = product.sizes
       .map(
         (size) => `
-        <button class="size-btn" data-size="${size}">${size}</button>
+        <button class="size-btn${size.available ? "" : " size-btn--disabled"}" data-size="${size.name}" ${size.available ? "" : "disabled"}>${size.name}</button>
       `,
       )
       .join("");
 
-    // Select first size by default
-    const firstBtn = sizesGrid.querySelector(".size-btn");
-    if (firstBtn) {
-      firstBtn.classList.add("active");
+    // Select first available size by default
+    const firstAvailableBtn = sizesGrid.querySelector(
+      ".size-btn:not(.size-btn--disabled)",
+    );
+    if (firstAvailableBtn) {
+      firstAvailableBtn.classList.add("active");
+
+      // Update WhatsApp message with first available size
+      if (currentProduct) {
+        const selectedSize = firstAvailableBtn.dataset.size;
+        const message = encodeURIComponent(
+          `${currentProduct.whatsappMessage} Размер: ${selectedSize}.`,
+        );
+        whatsappBtn.href = `https://wa.me/77754782111?text=${message}`;
+      }
     }
 
-    sizesGrid.querySelectorAll(".size-btn").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        sizesGrid
-          .querySelectorAll(".size-btn")
-          .forEach((b) => b.classList.remove("active"));
-        btn.classList.add("active");
+    sizesGrid
+      .querySelectorAll(".size-btn:not(.size-btn--disabled)")
+      .forEach((btn) => {
+        btn.addEventListener("click", () => {
+          sizesGrid
+            .querySelectorAll(".size-btn")
+            .forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
 
-        // Update WhatsApp message with selected size
-        if (currentProduct) {
-          const selectedSize = btn.dataset.size;
-          const message = encodeURIComponent(
-            `${currentProduct.whatsappMessage} Размер: ${selectedSize}.`,
-          );
-          whatsappBtn.href = `https://wa.me/77754782111?text=${message}`;
-        }
+          // Update WhatsApp message with selected size
+          if (currentProduct) {
+            const selectedSize = btn.dataset.size;
+            const message = encodeURIComponent(
+              `${currentProduct.whatsappMessage} Размер: ${selectedSize}.`,
+            );
+            whatsappBtn.href = `https://wa.me/77754782111?text=${message}`;
+          }
+        });
       });
-    });
   };
 
   // ========== GALLERY ==========

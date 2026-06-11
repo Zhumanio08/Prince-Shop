@@ -15,7 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" href="../media/logo.png" type="image/png" />
+    <link rel="icon" href="media/logo.png" type="image/png" />
   </head>
   <body>
     <!-- ========== HEADER / NAVIGATION ========== -->
@@ -23,7 +23,7 @@
       <div class="container">
         <div class="header__inner">
           <a href="#hero" class="logo">
-            <img src="../media/logo.png" alt="PRINCE" class="logo__img" />
+            <img src="media/logo.png" alt="PRINCE" class="logo__img" />
           </a>
           <nav class="nav" id="nav">
             <ul class="nav__list">
@@ -239,14 +239,14 @@
           <div class="about__images">
             <div class="about__img-main">
               <img
-                src="../media/prince.png"
+                src="media/prince.png"
                 alt="Интерьер магазина PRINCE"
                 loading="lazy"
               />
             </div>
             <div class="about__img-secondary">
               <img
-                src="../media/prince2.png"
+                src="media/prince2.png"
                 alt="Детали интерьера PRINCE"
                 loading="lazy"
               />
@@ -512,7 +512,115 @@
       <img src="" alt="" id="zoomImage" />
     </div>
 
+    <!-- ========== AI CHATBOT ========== -->
+    <!-- Floating toggle button -->
+    <button class="chat-toggle" id="chatToggle" aria-label="Открыть чат">
+      <svg
+        class="chat-toggle__icon"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
+      </svg>
+      <svg
+        class="chat-toggle__close"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+      >
+        <path d="M18 6L6 18M6 6l12 12" />
+      </svg>
+    </button>
+
+    <!-- Chat widget -->
+    <div class="chat-widget" id="chatWidget">
+      <div class="chat-widget__header">
+        <div class="chat-widget__info">
+          <div class="chat-widget__avatar">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M12 2L2 7l10 5 10-5-10-5z" />
+              <path d="M2 17l10 5 10-5" />
+              <path d="M2 12l10 5 10-5" />
+            </svg>
+          </div>
+          <div>
+            <span class="chat-widget__title">PRINCE</span>
+            <span class="chat-widget__status">Консультант</span>
+          </div>
+        </div>
+        <div class="chat-widget__actions">
+          <button
+            class="chat-widget__action"
+            id="chatMinimize"
+            aria-label="Свернуть"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            >
+              <path d="M18 15l-6-6-6 6" />
+            </svg>
+          </button>
+          <button
+            class="chat-widget__action"
+            id="chatClose"
+            aria-label="Закрыть"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            >
+              <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="chat-widget__body" id="chatBody"></div>
+      <div class="chat-widget__footer">
+        <textarea
+          class="chat-widget__input"
+          id="chatInput"
+          placeholder="Напишите сообщение..."
+          rows="1"
+        ></textarea>
+        <button class="chat-widget__send" id="chatSend" aria-label="Отправить">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M22 2L11 13" />
+            <path d="M22 2l-7 20-4-9-9-4 20-7z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
     <script src="js/data.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/chatbot.js"></script>
   </body>
 </html>

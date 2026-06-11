@@ -1,0 +1,12 @@
+# PRINCE — Git Ignore
+
+# API keys and config
+js/config.js
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# IDE
+.vscode/
+*.sublime-*
